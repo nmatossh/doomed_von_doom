@@ -61,12 +61,15 @@ function addVisualEffects() {
 function createFloatingParticles() {
     const container = document.querySelector('.container');
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 10; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 10 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.position = 'absolute';
+        particle.style.pointerEvents = 'none';
         container.appendChild(particle);
     }
 }
