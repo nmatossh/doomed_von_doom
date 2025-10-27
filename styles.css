@@ -1,0 +1,322 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', monospace;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Contenedor principal con imagen de fondo */
+.container {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Overlay oscuro para mejorar legibilidad */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(20, 20, 20, 0.8) 25%,
+        rgba(0, 0, 0, 0.95) 50%,
+        rgba(15, 15, 15, 0.8) 75%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    z-index: 1;
+}
+
+/* Contenido principal */
+.header, .main-content, .footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilos del header */
+.header {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #143b14;
+    text-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00,
+        0 0 40px #00ff00;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* Estilos de la leyenda */
+.legend {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.legend-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cccccc;
+    text-shadow: none;
+    font-weight: 300;
+}
+
+/* Contenedor del contador */
+.countdown-container {
+    margin-bottom: 40px;
+}
+
+.countdown-title {
+    font-size: 1.8rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Estilos del contador */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    padding: 20px;
+    background: rgba(25, 25, 25, 0.8);
+    border: 1px solid #444;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.time-unit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: #555;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: none;
+    font-family: 'Orbitron', monospace;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #888888;
+    text-shadow: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Estilos del footer */
+.footer {
+    margin-top: 40px;
+}
+
+.doom-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #cccccc;
+    text-shadow: none;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+    font-weight: 300;
+}
+
+.attribution {
+    font-size: 0.9rem;
+    color: #666666;
+    text-shadow: none;
+    font-weight: 400;
+}
+
+/* Partículas flotantes */
+.particle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: #444444;
+    border-radius: 50%;
+    animation: float linear infinite;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+/* Animaciones */
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 10px #00ff00,
+            0 0 20px #00ff00,
+            0 0 30px #00ff00,
+            0 0 40px #00ff00;
+    }
+    100% {
+        text-shadow: 
+            0 0 20px #00ff00,
+            0 0 30px #00ff00,
+            0 0 40px #00ff00,
+            0 0 50px #00ff00;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Modo Doom especial (activado con tecla 'D') */
+.doom-mode .container {
+    filter: hue-rotate(180deg) saturate(2);
+}
+
+.doom-mode .title {
+    animation: titleGlow 0.5s ease-in-out infinite alternate;
+}
+
+.doom-mode .number {
+    color: #ff0000;
+    text-shadow: 0 0 20px #ff0000;
+}
+
+.doom-mode .label {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .legend-text {
+        font-size: 1rem;
+    }
+    
+    .countdown {
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .time-unit {
+        min-width: 80px;
+        padding: 15px;
+    }
+    
+    .number {
+        font-size: 2rem;
+    }
+    
+    .label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .time-unit {
+        min-width: 200px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .number {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+}
